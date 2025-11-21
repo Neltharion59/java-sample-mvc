@@ -36,11 +36,32 @@ class UserAccountInfo {
 }
 UserAccountInfo o-- BusinessAgreement: Agreements
 
-class BusinessAgreement {
-    +int AgreementNumber;
-    +String ExpirationDate;
-
-    +void LoadBussinessAgreements()
+class LoneClass{
+    +void A()
+    +void B()
+    +void C()
+    +void D()
+    +void E()
+    +void F()
+    +void G()
+    +void H()
+    +void I()
 }
+
+class FriendlyClass{
+    +void Method01()
+    +void Method02()
+    +void Method03()
+}
+
+class DistantClass{
+    +void MethodX()
+}
+
+LoneClass--> FriendlyClass 
+FriendlyClass --> DistantClass
+
+UserService --> UserAccountInfo
+UserService --> LogService
 
 @enduml
