@@ -1,0 +1,55 @@
+' AccountController.Login(String name, String password)
+
+@startuml
+activate AccountController
+
+AccountController -> UserService : CheckLogin(name, password)
+activate UserService
+
+UserService -> UserService : LogLoginAttempt(name, password)
+activate UserService
+UserService -> LogService: Log(message)
+activate LogService
+deactivate LogService
+deactivate UserService
+
+alt name == "jozo" && password == "password123"
+    UserService -> UserService : LogLoginSuccess(name)
+    activate UserService
+    UserService -> LogService: Log(message)
+    activate LogService
+    deactivate LogService
+    deactivate UserService
+    UserService --> AccountController : true
+else
+    UserService -> UserService : LogLoginFailure(name)
+    activate UserService
+    UserService -> LogService: Log(message)
+    activate LogService
+    deactivate LogService
+    deactivate UserService
+    UserService --> AccountController : false
+end
+
+deactivate UserService
+
+opt loginSuccess
+    AccountController -> UserService : FetchUserInfo(name)
+    activate UserService
+    opt userInfo != null && userInfo.agreementNumbers.length > 0
+        UserService -> UserAccountInfo : LoadBussinessAgreements()
+        activate UserAccountInfo
+            loop int i = 0; i < agreementNumbers.length; i++
+                UserAccountInfo -> BusinessAgreement: Load()
+                activate BusinessAgreement
+                deactivate BusinessAgreement
+            end
+        deactivate UserAccountInfo
+    end
+
+    UserService --> AccountController : UserAccountInfo
+    deactivate UserService
+end
+
+deactivate AccountController
+@enduml

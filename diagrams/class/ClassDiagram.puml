@@ -1,0 +1,46 @@
+@startuml
+
+abstract class ApplicationController {
+    #void OnActionExecuting()
+}
+ApplicationController o-- Services : Services
+
+class AccountController extends ApplicationController {
+    +void Login(String name, String password)
+    +{static} void main(String[] args)
+}
+AccountController o-- UserAccountInfo : UserInfo
+
+class Services {
+}
+Services o-- UserService : UserService
+
+class UserService {
+    +boolean CheckLogin(String name, String password)
+    +UserAccountInfo FetchUserInfo(String name)
+    +void LogLoginAttempt(String name, String password)
+    +void LogLoginSuccess(String name)
+    +void LogLoginFailure(String name)
+}
+
+class LogService{
+    +{static} void Log(String message)
+}
+
+class UserAccountInfo {
+    +String name
+    +public String birthDate
+    +public int[] agreementNumbers
+
+    +void LoadBussinessAgreements()
+}
+UserAccountInfo o-- BusinessAgreement: Agreements
+
+class BusinessAgreement {
+    +int AgreementNumber;
+    +String ExpirationDate;
+
+    +void LoadBussinessAgreements()
+}
+
+@enduml

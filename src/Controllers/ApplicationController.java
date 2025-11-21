@@ -11,7 +11,7 @@ public abstract class ApplicationController {
 		Services = new Services();
 	}
 	
-	public void OnActionExecuting()
+	protected void OnActionExecuting()
 	{
 		
 	}
