@@ -1,0 +1,13 @@
+' LoneClass.E()
+
+@startuml
+
+activate LoneClass
+
+LoneClass -> FriendlyClass : Method01()
+activate FriendlyClass
+deactivate FriendlyClass
+
+deactivate LoneClass
+
+@enduml
