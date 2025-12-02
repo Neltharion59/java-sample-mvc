@@ -1,0 +1,20 @@
+' LoneClass.K()
+
+@startuml
+
+activate LoneClass
+
+LoneClass -> LoneClass : J()
+activate LoneClass
+
+LoneClass -> LoneClass : A()
+activate LoneClass
+deactivate LoneClass
+
+LoneClass -> LoneClass : B()
+activate LoneClass
+deactivate LoneClass
+
+deactivate LoneClass
+deactivate LoneClass
+@enduml

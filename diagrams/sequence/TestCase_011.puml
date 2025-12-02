@@ -1,0 +1,25 @@
+' LoneClass.N()
+
+@startuml
+activate LoneClass
+
+LoneClass -> FriendlyClass : Method01()
+activate FriendlyClass
+deactivate FriendlyClass
+
+opt a
+    opt b
+        opt x < 55
+            LoneClass -> FriendlyClass : Method04()
+            activate FriendlyClass
+            deactivate FriendlyClass
+        end
+    end
+end
+
+LoneClass -> FriendlyClass : Method5()
+activate FriendlyClass
+deactivate FriendlyClass
+
+deactivate LoneClass
+@enduml

@@ -1,0 +1,67 @@
+' LoneClass.P()
+
+@startuml
+activate LoneClass
+
+LoneClass -> FriendlyClass : Method01()
+activate FriendlyClass
+deactivate FriendlyClass
+
+alt a
+    LoneClass -> FriendlyClass : Method04()
+    activate FriendlyClass
+    deactivate FriendlyClass
+
+    alt b
+        LoneClass -> FriendlyClass : Method05()
+        activate FriendlyClass
+        deactivate FriendlyClass
+
+        alt x < x < 55 + 14 && b || a
+            LoneClass -> FriendlyClass : Method06()
+            activate FriendlyClass
+            deactivate FriendlyClass
+        else else
+            LoneClass -> FriendlyClass : Method08()
+            activate FriendlyClass
+            deactivate FriendlyClass
+        end
+        
+        LoneClass -> FriendlyClass : Method07()
+        activate FriendlyClass
+        deactivate FriendlyClass
+    else else
+        LoneClass -> FriendlyClass : Method06()
+        activate FriendlyClass
+        deactivate FriendlyClass
+    end
+
+    LoneClass -> FriendlyClass : Method08()
+    activate FriendlyClass
+    deactivate FriendlyClass
+else
+    LoneClass -> FriendlyClass : Method05()
+    activate FriendlyClass
+    deactivate FriendlyClass
+
+    alt b
+        LoneClass -> FriendlyClass : Method06()
+        activate FriendlyClass
+        deactivate FriendlyClass
+    else else
+        LoneClass -> FriendlyClass : Method07()
+        activate FriendlyClass
+        deactivate FriendlyClass
+    end
+
+    LoneClass -> FriendlyClass :Method08()
+    activate FriendlyClass
+    deactivate FriendlyClass
+end
+
+LoneClass -> FriendlyClass : Method09()
+activate FriendlyClass
+deactivate FriendlyClass
+
+deactivate LoneClass
+@enduml

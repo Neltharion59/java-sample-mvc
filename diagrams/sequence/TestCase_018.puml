@@ -1,0 +1,21 @@
+' LoneClass.U()
+
+@startuml
+activate LoneClass
+
+LoneClass -> FriendlyClass : Method04()
+activate FriendlyClass
+deactivate FriendlyClass
+
+loop int i = 5; i < 10; i++
+    LoneClass -> FriendlyClass : Method05()
+    activate FriendlyClass
+    deactivate FriendlyClass
+end
+ 
+LoneClass -> FriendlyClass : Method06()
+activate FriendlyClass
+deactivate FriendlyClass
+
+deactivate LoneClass
+@enduml

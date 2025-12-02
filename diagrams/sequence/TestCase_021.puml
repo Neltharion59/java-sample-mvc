@@ -1,0 +1,30 @@
+' LoneClass.X()
+
+@startuml
+activate LoneClass
+
+LoneClass -> LoneClass : W()
+activate LoneClass
+
+LoneClass -> FriendlyClass : Method04()
+activate FriendlyClass
+deactivate FriendlyClass
+
+loop i < 10 
+    LoneClass -> FriendlyClass : Method05()
+    activate FriendlyClass
+    deactivate FriendlyClass
+end
+ 
+LoneClass -> FriendlyClass : Method06()
+activate FriendlyClass
+deactivate FriendlyClass
+
+deactivate LoneClass
+
+LoneClass -> LoneClass : A()
+activate LoneClass
+deactivate LoneClass
+
+deactivate LoneClass
+@enduml

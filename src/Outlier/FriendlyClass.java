@@ -7,4 +7,10 @@ public class FriendlyClass {
 		DistantClass c = new DistantClass();
 		c.MethodX();
 	}
+	public void Method04() {}
+	public void Method05() {}
+	public void Method06() {}
+	public void Method07() {}
+	public void Method08() {}
+	public void Method09() {}
 }

@@ -1,0 +1,36 @@
+' LoneClass.T()
+
+@startuml
+activate LoneClass
+
+LoneClass -> FriendlyClass : Method08()
+activate FriendlyClass
+deactivate FriendlyClass
+
+opt a == 1
+    LoneClass -> FriendlyClass : Method01()
+    activate FriendlyClass
+    deactivate FriendlyClass
+end
+opt a == 2
+    LoneClass -> FriendlyClass : Method02()
+    activate FriendlyClass
+    deactivate FriendlyClass
+end
+opt a == 3
+    LoneClass -> FriendlyClass : Method03()
+    activate FriendlyClass
+    deactivate FriendlyClass
+end
+opt a == 4
+    LoneClass -> FriendlyClass : Method04()
+    activate FriendlyClass
+    deactivate FriendlyClass
+end
+
+LoneClass -> FriendlyClass :  Method08()
+activate FriendlyClass
+deactivate FriendlyClass
+
+deactivate LoneClass
+@enduml
